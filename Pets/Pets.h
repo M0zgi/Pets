@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 
 #include<iostream>
 #include<string>
@@ -9,11 +9,11 @@ using namespace std;
 struct numpunct
 	: std::numpunct<char>
 {
-	std::string do_truename() const { return "Да"; }
-	std::string do_falsename() const { return "Нет"; }
+	std::string do_truename() const { return "Р”Р°"; }
+	std::string do_falsename() const { return "РќРµС‚"; }
 };
 
-//агрегация
+//Р°РіСЂРµРіР°С†РёСЏ
 class Plate
 {
 private:	
@@ -34,7 +34,7 @@ private:
 	public:
 		void training()
 		{
-			cout << "Меня можно дрессировать!";
+			cout << "РњРµРЅСЏ РјРѕР¶РЅРѕ РґСЂРµСЃСЃРёСЂРѕРІР°С‚СЊ!";
 		}
 	};
 
@@ -42,11 +42,11 @@ public:
 	
 	AnimalTraining at;
 	Plate pl;
-	string myPets; //тип животного (собака, кошка, попугай....)
+	string myPets; //С‚РёРї Р¶РёРІРѕС‚РЅРѕРіРѕ (СЃРѕР±Р°РєР°, РєРѕС€РєР°, РїРѕРїСѓРіР°Р№....)
 	string name;
 	float age;
-	bool foodSource;//источник пищи для человека
-	string classification;//классификация
+	bool foodSource;//РёСЃС‚РѕС‡РЅРёРє РїРёС‰Рё РґР»СЏ С‡РµР»РѕРІРµРєР°
+	string classification;//РєР»Р°СЃСЃРёС„РёРєР°С†РёСЏ
 	string voice;
 
 	Pets() {}
@@ -55,11 +55,11 @@ public:
 	void print()
 	{
 		cout << getMyPets() << endl;
-		cout << "Имя: "<< getName() << endl << "Возраст: " << getAge() << " лет"<< endl << "Источник пищи для человека: " << getFoodSource()
-			<< endl << "Классификация: " << getClassification() << endl << "Голос: " << getVoice() << endl;
+		cout << "РРјСЏ: "<< getName() << endl << "Р’РѕР·СЂР°СЃС‚: " << getAge() << " Р»РµС‚"<< endl << "РСЃС‚РѕС‡РЅРёРє РїРёС‰Рё РґР»СЏ С‡РµР»РѕРІРµРєР°: " << getFoodSource()
+			<< endl << "РљР»Р°СЃСЃРёС„РёРєР°С†РёСЏ: " << getClassification() << endl << "Р“РѕР»РѕСЃ: " << getVoice() << endl;
 	}
 
-	//паттерн проектирования (диллегирование)
+	//РїР°С‚С‚РµСЂРЅ РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёСЏ (РґРёР»Р»РµРіРёСЂРѕРІР°РЅРёРµ)
 	void training()
 	{
 		at.training();
@@ -67,7 +67,7 @@ public:
 
 	void printPlate()
 	{
-		cout << "У животного " << getMyPets() << " миска " << pl.getColor() << " цвета";
+		cout << "РЈ Р¶РёРІРѕС‚РЅРѕРіРѕ " << getMyPets() << " РјРёСЃРєР° " << pl.getColor() << " С†РІРµС‚Р°";
 	}
 
 	void setColorPl(string color) { pl.setColor(color); }
@@ -97,8 +97,8 @@ inline Pets::Pets(string myPets, string name, float age, bool foodSource, string
 class Dog : public Pets
 {
 public:
-	string breed; //порода собаки
-	string size;//размер собаки
+	string breed; //РїРѕСЂРѕРґР° СЃРѕР±Р°РєРё
+	string size;//СЂР°Р·РјРµСЂ СЃРѕР±Р°РєРё
 
 	Dog(){}
 	Dog(string breed, string size) : breed(breed), size(size) {}
@@ -106,8 +106,8 @@ public:
 	void print()
 	{
 		Pets::print();
-		cout << "Порода: " << breed << endl;
-		cout << "Размер: " <<  size << endl;
+		cout << "РџРѕСЂРѕРґР°: " << breed << endl;
+		cout << "Р Р°Р·РјРµСЂ: " <<  size << endl;
 	}
 };
 
@@ -115,8 +115,8 @@ public:
 class Cat : public Pets
 {
 public:
-	string breed;//порода кошки
-	bool rathunt; //охота на крыс
+	string breed;//РїРѕСЂРѕРґР° РєРѕС€РєРё
+	bool rathunt; //РѕС…РѕС‚Р° РЅР° РєСЂС‹СЃ
 	
 	Cat(){}
 	Cat(string breed, bool rathunt) : breed(breed), rathunt(rathunt) {};
@@ -124,19 +124,19 @@ public:
 	void print()
 	{
 		Pets::print();
-		cout << "Порода: " << breed << endl;
-		cout << "Охота на крыс: " << rathunt << endl;
+		cout << "РџРѕСЂРѕРґР°: " << breed << endl;
+		cout << "РћС…РѕС‚Р° РЅР° РєСЂС‹СЃ: " << rathunt << endl;
 	}
 };
 
 class Parrot : public Pets
 {
 public:
-	string species; //вид попугаев
-	string size; //размер попугая
-	string featherColor; //цвет перьев
-	string wingspan;//размех крыльев
-	int rangeOfFlight;//дальность полета
+	string species; //РІРёРґ РїРѕРїСѓРіР°РµРІ
+	string size; //СЂР°Р·РјРµСЂ РїРѕРїСѓРіР°СЏ
+	string featherColor; //С†РІРµС‚ РїРµСЂСЊРµРІ
+	string wingspan;//СЂР°Р·РјРµС… РєСЂС‹Р»СЊРµРІ
+	int rangeOfFlight;//РґР°Р»СЊРЅРѕСЃС‚СЊ РїРѕР»РµС‚Р°
 
 	Parrot(){}
 	Parrot(string species, string size, string featherColor, string wingspan, int rangeOfFlight) : species(species), size(size), featherColor(featherColor), wingspan(wingspan), rangeOfFlight(rangeOfFlight) {}
@@ -144,10 +144,10 @@ public:
 	void print()
 	{
 		Pets::print();
-		cout << "Вид попугая: " << species << endl;
-		cout << "Размер: " << size << endl;
-		cout << "Цвет: " << featherColor << endl;
-		cout << "Размах крыльев: " << wingspan << endl;
-		cout << "Дальность полета: " << rangeOfFlight << " км." << endl;
+		cout << "Р’РёРґ РїРѕРїСѓРіР°СЏ: " << species << endl;
+		cout << "Р Р°Р·РјРµСЂ: " << size << endl;
+		cout << "Р¦РІРµС‚: " << featherColor << endl;
+		cout << "Р Р°Р·РјР°С… РєСЂС‹Р»СЊРµРІ: " << wingspan << endl;
+		cout << "Р”Р°Р»СЊРЅРѕСЃС‚СЊ РїРѕР»РµС‚Р°: " << rangeOfFlight << " РєРј." << endl;
 	}
 };
