@@ -77,9 +77,7 @@ public:
 	float getAge() const { return age; }
 	bool getFoodSource() const { return foodSource; }
 	string getClassification() const { return classification; }
-	string getVoice() const { return voice; }
-
-	friend class Plate;
+	string getVoice() const { return voice; }	
 };
 
 
